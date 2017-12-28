@@ -1,0 +1,75 @@
+// наложение фона для тестирования сеток
+body.perfect {
+    background: $mobile-bg no-repeat 50% 0px;
+    background-size: 320px auto;
+    min-height: 750px; 
+}
+
+@media (min-width: $md-width) {
+    body.perfect {
+        background: $tablet-bg no-repeat 50% 0px;
+        background-size: $md-width auto;
+    }
+}
+
+@media (min-width: $lg-width) {
+    body.perfect {
+        background: $desktop-bg no-repeat 50% 0px;
+        background-size: $lg-width auto;
+    }
+}
+
+// миксин для сеток
+$red: rgb(255,0,0);
+$green: rgb(0,255,0);
+$blue: rgb(0,0,255);
+$yellow: rgb(255,255,0);
+$magenta: rgb(255,0,255);
+$cyan: rgb(0,255,255);
+
+@mixin outline($outline-color) {
+    outline: 1px solid $outline-color;
+    background-color: rgba($outline-color, 0.3);
+    position: relative;
+
+    &::before {
+        content: "." attr(class) "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 3px 5px;
+        color: #fff;
+        background-color: $outline-color;
+    } 
+}
+
+@mixin no-outline() {
+    outline: 0;
+    background: none;
+
+    &::before {
+        content: "";
+        padding: 0;
+    } 
+}
+// ------------------
+
+
+.help {
+    @include outline($red);
+}
+
+.debug .container {
+    @include outline($yellow);
+}
+
+.debug .row {
+    @include outline($green);
+}
+
+.debug *[class^="col-"] {
+    @include outline($blue);
+}

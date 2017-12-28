@@ -1,0 +1,31 @@
+/* --- Libs styles ---*/
+//@import "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
+
+/* --- Global styles ---*/
+@import "partials/smart-grid";
+@import "partials/colors";
+@import "partials/variable";
+@import "partials/mixins";
+@import "partials/sprite";
+@import "partials/fonts";
+@import "partials/taxonomie";
+@import "partials/scaffolding";
+
+/* --- Global styles ---*/
+
+
+/* --- temporary styles ---*/
+@import "outlines";  //
+/* --- end temporary styles ---*/
+
+
+/* --- views styles ---*/
+@import "views/header";
+@import "views/footer";
+/* --- end views styles ---*/
+
+
+/* --- pages styles ---*/
+
+/* --- end pages styles ---*/
+
